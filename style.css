@@ -1,0 +1,286 @@
+/* General Body and Typography */
+body {
+    font-family: 'メイリオ', Meiryo, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Pastel Tones and White Spaces */
+:root {
+    --pastel-pink: #FFD1DC; /* Light Pink */
+    --pastel-blue: #A7DBD8; /* Light Blue */
+    --pastel-green: #E0F8D8; /* Light Green */
+    --pastel-yellow: #FDFD96; /* Light Yellow */
+    --pastel-purple: #DCCFF8; /* Light Purple */
+    --text-color: #333;
+    --background-color: #f8f8f8;
+    --header-footer-bg: #ffffff;
+    --border-color: #eee;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--header-footer-bg);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--pastel-pink);
+    color: #fff;
+}
+
+/* Main Content Area */
+main {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+article h1 {
+    text-align: center;
+    color: var(--pastel-blue);
+    margin-bottom: 30px;
+}
+
+article p {
+    margin-bottom: 1em;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--header-footer-bg);
+    color: var(--text-color);
+    margin-top: 30px;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    main {
+        margin: 10px;
+        padding: 15px;
+    }
+}
+
+
+
+
+/* CSS-based Plant Leaf Icons */
+.leaf-icon {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--pastel-green);
+    border-radius: 0 50% 0 50%;
+    transform: rotate(45deg);
+    margin: 0 5px;
+}
+
+.leaf-icon::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--pastel-green);
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+}
+
+/* Heart Rate Line Animation */
+@keyframes heartbeat {
+    0% { transform: scaleY(1); }
+    50% { transform: scaleY(1.5); }
+    100% { transform: scaleY(1); }
+}
+
+.heart-rate-line {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 50px;
+    margin: 20px 0;
+}
+
+.heart-rate-line span {
+    display: block;
+    width: 5px;
+    height: 20px;
+    background-color: var(--pastel-pink);
+    margin: 0 2px;
+    animation: heartbeat 1s infinite alternate;
+}
+
+.heart-rate-line span:nth-child(2) { animation-delay: 0.1s; }
+.heart-rate-line span:nth-child(3) { animation-delay: 0.2s; }
+.heart-rate-line span:nth-child(4) { animation-delay: 0.3s; }
+.heart-rate-line span:nth-child(5) { animation-delay: 0.4s; }
+
+/* Drop-shaped Dividers */
+.drop-divider {
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    position: relative;
+    margin: 30px 0;
+}
+
+.drop-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 20px;
+    height: 20px;
+    background-color: var(--pastel-blue);
+    border-radius: 0 50% 50% 50%;
+}
+
+/* Floating Pill Shapes */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating-pill {
+    position: absolute;
+    background-color: var(--pastel-purple);
+    border-radius: 50px;
+    opacity: 0.6;
+    animation: float 3s infinite ease-in-out;
+    z-index: -1;
+}
+
+.pill-small { width: 50px; height: 20px; }
+.pill-medium { width: 80px; height: 30px; }
+.pill-large { width: 120px; height: 40px; }
+
+/* Micro Animations */
+/* Breathing Effect Background */
+@keyframes breathing {
+    0% { background-color: #f8f8f8; }
+    50% { background-color: #f0f0f0; }
+    100% { background-color: #f8f8f8; }
+}
+
+body.breathing-bg {
+    animation: breathing 5s infinite alternate;
+}
+
+/* Soft Pulse Buttons */
+.pulse-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--pastel-pink);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pulse-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 193, 203, 0.7);
+}
+
+/* Smooth Scale Transitions */
+.scale-transition {
+    transition: transform 0.3s ease;
+}
+
+.scale-transition:hover {
+    transform: scale(1.02);
+}
+
+/* Gentle Fade-ins and Scroll-triggered CSS Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add some basic styling for the article content */
+article p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+}
+
+article h2 {
+    color: var(--pastel-blue);
+    border-bottom: 2px solid var(--pastel-yellow);
+    padding-bottom: 5px;
+    margin-top: 40px;
+}
+
+/* Ensure proper spacing for the article */
+article {
+    padding: 20px;
+}
+
+/* Responsive adjustments for fonts and spacing */
+@media (max-width: 768px) {
+    article h1 {
+        font-size: 1.8em;
+    }
+    article h2 {
+        font-size: 1.4em;
+    }
+    article p {
+        font-size: 1em;
+    }
+}
+
+
